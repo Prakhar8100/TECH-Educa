@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="min-h-screen bg-gradient-to-br from-slate-900 via-indigo-900 to-purple-900 flex items-center justify-center p-6" style="font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;">
+   <div class="w-full max-w-md bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl shadow-xl p-8">
+        <h1 class="text-2xl font-semibold text-white mb-6">Admin Panel Login</h1>
+        <% if (typeof error !== 'undefined') { %>
+            <div class="mb-4 rounded-lg bg-red-500/20 border border-red-400 text-red-100 px-4 py-3"><%= error %></div>
+        <% } %>
+        <form method="post" action="/admin" class="space-y-4">
+            <div>
+                <label class="block text-sm text-white/80 mb-2">Email</label>
+                <input type="email" name="email" placeholder="admin@example.com" required class="w-full rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400">
+            </div>
+            <div>
+                <label class="block text-sm text-white/80 mb-2">Password</label>
+                <input type="password" name="password" placeholder="••••••••" required class="w-full rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400">
+            </div>
+            <button type="submit" class="w-full bg-indigo-500 hover:bg-indigo-600 text-white font-medium py-2.5 rounded-lg transition">Login</button>
+        </form>
+        <p class="mt-6 text-center"><a href="/" class="text-indigo-300 hover:text-indigo-200">Back to Home</a></p>
+   </div>
+</body>
+</html>
